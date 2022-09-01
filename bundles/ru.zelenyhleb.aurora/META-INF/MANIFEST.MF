@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: ru.zelenyhleb.aurora
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: ru.zelenyhleb.aurora
+Bundle-Version: 0.1.0.qualifier
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
+Bundle-Copyright: %Bundle-Copyright

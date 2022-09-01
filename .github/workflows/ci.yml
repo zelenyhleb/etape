@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "**"
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    name: Build Repository
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Set up JDK 11
+      uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: Setup Maven
+      run: echo "MAVEN_OPTS='-Xmx2048m'" > ~/.mavenrc
+    - name: Cache maven repo
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-maven-repo
+      with:
+        # maven files are stored in `~/.m2/repository` on Linux/macOS
+        path: |
+          ~/.m2/repository
+          !~/.m2/repository/ru/zelenyhleb/aurora
+          !~/.m2/repository/.cache/tycho
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/*.sha1') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+    - name: Build with Maven
+      run: mvn clean verify --no-transfer-progress -U
+
+    - name: Archive repository
+      if: ${{ github.event_name == 'push' }}
+      run: |
+        tar -C ./releng/ru.zelenyhleb.aurora.repository/target -czvf repository.tar.gz repository
+    - name: Preserve p2
+      if: ${{ github.event_name == 'push' }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: p2
+        path: ./repository.tar.gz
+
+  deploy:
+
+    name: Deploy p2 Repository
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Download p2
+        uses: actions/download-artifact@v2
+        with:
+          name: p2
+
+      - name: Prepare metadata
+        run: |
+          mkdir ./composite
+          tar -xzf ./repository.tar.gz -C ./composite
+          cp ./releng/ru.zelenyhleb.aurora.releng/compositeArtifacts.xml ./composite
+          cp ./releng/ru.zelenyhleb.aurora.releng/compositeContent.xml ./composite
+      - name: Detect build type
+        id: get-destination-dir
+        env:
+          RELEASE_BUILD: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        run: |
+          if ${RELEASE_BUILD} == true; then
+            echo "::set-output name=destination_dir::release"
+          else
+            echo "::set-output name=destination_dir::integration"
+          fi
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./composite
+          destination_dir: ${{ steps.get-destination-dir.outputs.destination_dir }}
+          keep_files: true
+
+      - name: Delete p2
+        uses: geekyeggo/delete-artifact@v1
+        with:
+          name: p2
