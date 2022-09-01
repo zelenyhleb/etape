@@ -3,6 +3,8 @@
 
 Also commonly known as the polar lights, is a natural light display in Earth's sky, predominantly seen in high-latitude regions (around the Arctic and Antarctic). Auroras display dynamic patterns of brilliant lights that appear as curtains, rays, spirals, or dynamic flickers covering the entire sky.
 
+![image](https://user-images.githubusercontent.com/15957500/187897095-c07faff9-8e35-4d43-9ed6-6b86146e336c.png)
+
 Aurora provides a set of useful **Eclipse** plugin development facilities.
 
 ## Current features
