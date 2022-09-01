@@ -1,5 +1,6 @@
 # Aurora
 [![Build Status](https://github.com/zelenyhleb/aurora/actions/workflows/ci.yml/badge.svg)](https://github.com/zelenyhleb/aurora/actions)
+[![Hits-of-Code](https://hitsofcode.com/github/zelenyhleb/aurora?branch=main)](https://hitsofcode.com/github/zelenyhleb/aurora/view?branch=main)
 
 Also commonly known as the polar lights, is a natural light display in Earth's sky, predominantly seen in high-latitude regions (around the Arctic and Antarctic). Auroras display dynamic patterns of brilliant lights that appear as curtains, rays, spirals, or dynamic flickers covering the entire sky.
 
