@@ -6,7 +6,7 @@
 
 There is no need to explain what it is and what is it for, since we all are engineers here.
 
-![image](https://user-images.githubusercontent.com/15957500/187897095-c07faff9-8e35-4d43-9ed6-6b86146e336c.png)
+![image](https://user-images.githubusercontent.com/15957500/206542106-a5484930-934a-4cb7-8623-231ed5d56f18.png)
 
 ETape provides a set of useful **Eclipse** plugin development facilities.
 
