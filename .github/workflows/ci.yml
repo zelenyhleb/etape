@@ -44,7 +44,7 @@ jobs:
     - name: Archive repository
       if: ${{ github.event_name == 'push' }}
       run: |
-        tar -C ./releng/ru.zelenyhleb.aurora.repository/target -czvf repository.tar.gz repository
+        tar -C ./releng/ru.zelenyhleb.etape.repository/target -czvf repository.tar.gz repository
     - name: Preserve p2
       if: ${{ github.event_name == 'push' }}
       uses: actions/upload-artifact@v2
@@ -71,8 +71,8 @@ jobs:
         run: |
           mkdir ./composite
           tar -xzf ./repository.tar.gz -C ./composite
-          cp ./releng/ru.zelenyhleb.aurora.releng/compositeArtifacts.xml ./composite
-          cp ./releng/ru.zelenyhleb.aurora.releng/compositeContent.xml ./composite
+          cp ./releng/ru.zelenyhleb.etape.releng/compositeArtifacts.xml ./composite
+          cp ./releng/ru.zelenyhleb.etape.releng/compositeContent.xml ./composite
       - name: Detect build type
         id: get-destination-dir
         env:

@@ -17,16 +17,25 @@
 <project
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+	<modelVersion>4.0.0</modelVersion>
 	<groupId>ru.zelenyhleb.etape</groupId>
-	<artifactId>ru.zelenyhleb.etape.root</artifactId>
+	<artifactId>ru.zelenyhleb.etape.aggregator</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>.\releng\ru.zelenyhleb.etape.aggregator</module>
+		<module>..\..\releng\ru.zelenyhleb.etape.target</module>
+		<module>..\..\releng\ru.zelenyhleb.etape.repository</module>
+		
+		<module>..\..\features\ru.zelenyhleb.etape.feature</module>
+		<module>..\..\bundles\ru.zelenyhleb.etape</module>
+		<module>..\..\bundles\ru.zelenyhleb.etape.core</module>
+		<module>..\..\bundles\ru.zelenyhleb.etape.preferences</module>
+		<module>..\..\bundles\ru.zelenyhleb.etape.ui</module>
+		<module>..\..\bundles\ru.zelenyhleb.etape.templates</module>
+
 	</modules>
 
 </project>

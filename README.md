@@ -1,14 +1,14 @@
-# Aurora
-[![Build Status](https://github.com/zelenyhleb/aurora/actions/workflows/ci.yml/badge.svg)](https://github.com/zelenyhleb/aurora/actions)
-[![Hits-of-Code](https://hitsofcode.com/github/zelenyhleb/aurora?branch=main)](https://hitsofcode.com/github/zelenyhleb/aurora/view?branch=main)
-![GitHub issues](https://img.shields.io/github/issues/zelenyhleb/aurora)
-![GitHub](https://img.shields.io/github/license/zelenyhleb/aurora)
+# ETape
+[![Build Status](https://github.com/zelenyhleb/etape/actions/workflows/ci.yml/badge.svg)](https://github.com/zelenyhleb/etape/actions)
+[![Hits-of-Code](https://hitsofcode.com/github/zelenyhleb/etape?branch=main)](https://hitsofcode.com/github/zelenyhleb/etape/view?branch=main)
+![GitHub issues](https://img.shields.io/github/issues/zelenyhleb/etape)
+![GitHub](https://img.shields.io/github/license/zelenyhleb/etape)
 
-Also commonly known as the polar lights, is a natural light display in Earth's sky, predominantly seen in high-latitude regions (around the Arctic and Antarctic). Auroras display dynamic patterns of brilliant lights that appear as curtains, rays, spirals, or dynamic flickers covering the entire sky.
+There is no need to explain what it is and what is it for, since we all are engineers here.
 
 ![image](https://user-images.githubusercontent.com/15957500/187897095-c07faff9-8e35-4d43-9ed6-6b86146e336c.png)
 
-Aurora provides a set of useful **Eclipse** plugin development facilities.
+ETape provides a set of useful **Eclipse** plugin development facilities.
 
 ## Current features
 
@@ -18,15 +18,15 @@ Aurora provides a set of useful **Eclipse** plugin development facilities.
 
 You can install Aurora through the p2 update site:
 
-`https://zelenyhleb.github.io/aurora/integration/`
+`https://zelenyhleb.github.io/etape/integration/`
 
 ## Building from source code
 
 Make sure you have Maven 3.6+ and Git installed and added to PATH variable.
 
 ```
-git clone git@github.com:zelenyhleb/aurora.git
-cd aurora
+git clone git@github.com:zelenyhleb/etape.git
+cd etape
 mvn clean verify
 ```
 
