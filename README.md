@@ -16,7 +16,7 @@ ETape provides a set of useful **Eclipse** plugin development facilities.
 
 ## Installation
 
-You can install Aurora through the p2 update site:
+You can install Etape through the p2 update site:
 
 `https://zelenyhleb.github.io/etape/integration/`
 

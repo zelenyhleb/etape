@@ -15,7 +15,7 @@
 	Contributors:
 		Nikifor Fedorov - initial API and implementation
 -->
-<repository name='&quot;Aurora&quot;'
+<repository name='&quot;Etape&quot;'
 	type='org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository'
 	version='1.0.0'>
 	<properties size='1'>

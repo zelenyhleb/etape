@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - master
     tags:
       - "**"
   pull_request:
@@ -31,7 +31,7 @@ jobs:
         # maven files are stored in `~/.m2/repository` on Linux/macOS
         path: |
           ~/.m2/repository
-          !~/.m2/repository/ru/zelenyhleb/aurora
+          !~/.m2/repository/ru/zelenyhleb/etape
           !~/.m2/repository/.cache/tycho
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/*.sha1') }}
         restore-keys: |

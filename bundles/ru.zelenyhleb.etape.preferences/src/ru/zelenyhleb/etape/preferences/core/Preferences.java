@@ -31,7 +31,7 @@ public final class Preferences {
 			new PreferencesId().get());
 
 	public Preference copyright() {
-		return new Preference(store, "aurora.copyright"); //$NON-NLS-1$
+		return new Preference(store, "etape.copyright"); //$NON-NLS-1$
 	}
 
 }
