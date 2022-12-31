@@ -18,6 +18,6 @@
    <feature id="ru.zelenyhleb.etape.feature">
       <category name="ru.zelenyhleb.etape.category"/>
    </feature>
-   <category-def name="ru.zelenyhleb.etape.category" label="Aurora"/>
-   <category-def name="ru.zelenyhleb.etape.category.source" label="Aurora Source"/>
+   <category-def name="ru.zelenyhleb.etape.category" label="Etape"/>
+   <category-def name="ru.zelenyhleb.etape.category.source" label="Etape Source"/>
 </site>
