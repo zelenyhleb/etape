@@ -41,7 +41,7 @@ public final class CopyrightPreferencePage extends FieldEditorPreferencePage imp
 
 	@Override
 	protected void createFieldEditors() {
-		addField(new StringFieldEditor(new Preferences().copyright().get(),
+		addField(new StringFieldEditor(new Preferences().copyright().key(),
 				Messages.CopyrightPreferencePage_label_copyright, StringFieldEditor.UNLIMITED, 10,
 				StringFieldEditor.VALIDATE_ON_KEY_STROKE, getFieldEditorParent()));
 	}
