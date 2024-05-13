@@ -20,6 +20,10 @@
  *******************************************************************************/
 package ru.zelenyhleb.etape.preferences.core;
 
+import java.io.IOException;
+
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 public final class Preference {
@@ -38,6 +42,12 @@ public final class Preference {
 
 	public void set(String value) {
 		store.setValue(key, value);
+		try {
+			store.save();
+		} catch (IOException e) {
+			Platform.getLog(getClass())
+					.error(NLS.bind("Can not save preference value {1} to preference {0}", key, value), e); //$NON-NLS-1$
+		}
 	}
 
 	public String key() {
